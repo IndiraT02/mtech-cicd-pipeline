@@ -67,6 +67,7 @@ Engineer writes JIL file locally
 ## ALM Process (Application Lifecycle Management)
 
 Step 1: Create folder with DEV/UAT/PROD JIL files
+
 Step 2: Clone Bitbucket repo locally
 git clone <bitbucket-url>
 Step 3: Checkout working branch
