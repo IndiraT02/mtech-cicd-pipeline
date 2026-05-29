@@ -70,17 +70,23 @@ Step 1: Create folder with DEV/UAT/PROD JIL files
 
 Step 2: Clone Bitbucket repo locally
 git clone <bitbucket-url>
+
 Step 3: Checkout working branch
 git checkout bugfix/feeds
+
 Step 4: Copy validated JILs to Deploy/NAM folder
+
 Step 5: Push to Bitbucket
 git status
 git add --all
 git commit -m "Updation_JILs"
 git push
+
 Step 6: Create Pull Request in Bitbucket
 bugfix/feeds → master
+
 Step 7: Reviewer approves and merges PR
+
 Step 8: Generate Jenkins Build ID
 
 ---
@@ -88,15 +94,24 @@ Step 8: Generate Jenkins Build ID
 ## RLM Process (Release Lifecycle Management)
 
 Step 1: Login to RLM portal
+
 Step 2: Create Request → Choose RLM Template
+
 Step 3: Set environment = DEV
 Set promotion environment = UAT
+
 Step 4: Run RLM for DEV → Status: Complete
+
 Step 5: UAT RLM auto-created (Planned)
+
 Step 6: Run RLM for UAT → Status: Complete
+
 Step 7: PROD RLM auto-created (Planned)
+
 Step 8: Raise SAAS Change Ticket for PROD
+
 Step 9: Run RLM for PROD → Status: Complete
+
 Step 10: Verify jobs in AutoSys WCC Console
 
 ---
@@ -132,10 +147,15 @@ All three environments validated and deployed successfully through full DEV → 
 ## Key Achievements
 
 - Reduced deployment time from hours to minutes
+  
 - Full audit trail — every JIL change tracked in Git history
+  
 - Zero manual intervention from commit to production
+  
 - Automated syntax validation catches errors before deployment
+  
 - Consistent deployments across DEV, UAT, and PROD
+  
 - RLM handles approvals, rollbacks, and SAAS change tickets
 
 ---
@@ -143,10 +163,15 @@ All three environments validated and deployed successfully through full DEV → 
 ## What I Learned
 
 - **JIL scripting** — CMD jobs, BOX jobs, job dependencies, conditions
+
 - **Git branching** — feature branches, bugfix branches, pull requests
+  
 - **CI/CD design** — four-stage pipeline: Commit → Build → Validate → Deploy
+  
 - **Release management** — environment promotion, change tickets, rollback
+  
 - **AutoSys operations** — job lifecycle, JILIN validation, WCC monitoring
+  
 - **Enterprise DevOps** — how large Finance organizations manage deployments
 
 ---
