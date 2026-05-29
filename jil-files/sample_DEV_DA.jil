@@ -1,0 +1,21 @@
+/* ─────────────────────────────────────────────────────────
+   Sample JIL File — DEV Environment
+   Naming Convention: File_DA.jil (DA = DEV AutoSys)
+   Author: Indira Tiruveedhula
+   Project: M.Tech Dissertation — BITS Pilani 2026
+   Note: Sample file — actual client JILs are confidential
+   ───────────────────────────────────────────────────────── */
+
+insert_job: SAMPLE_DEV_OUTBOUND_JOB
+job_type: CMD
+command: ksh -x $SCRIPTS/sample_process.sh SAMPLE PROC 1000 ENV
+machine: dev-server-01
+owner: batch_user
+permission: me,mx,ge,gx,we,wx
+date_conditions: 0
+description: "Sample DEV job for outbound processing"
+std_out_file: "$ASYSLOGFILE"
+std_err_file: "$ASYSERRFILE"
+max_run_alarm: 30
+alarm_if_fail: 1
+alarm_if_terminated: 1

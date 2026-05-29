@@ -1,0 +1,23 @@
+/* ─────────────────────────────────────────────────────────
+   Sample JIL File — UAT Environment
+   Naming Convention: File_QA.jil (QA = UAT AutoSys)
+   Author: Indira Tiruveedhula
+   Note: Sample file — actual client JILs are confidential
+   ───────────────────────────────────────────────────────── */
+
+insert_job: SAMPLE_UAT_PLACEHOLDER_JOB
+job_type: CMD
+command: ksh -x $JAVA_EXEC/sampleLoad.sh SAMPLE_PROC 3570 ENR
+machine: uat-server-01
+owner: batch_user
+permission: me,mx,ge,gx
+date_conditions: 1
+days_of_week: su,mo,tu,we,th,fr,sa
+exclude_calendar: SAMPLE_HOLIDAY_CALENDAR
+start_times: "21:30"
+description: "Sample UAT placeholder job"
+std_out_file: "$ASYSLOGFILE"
+std_err_file: "$ASYSERRFILE"
+max_run_alarm: 61
+alarm_if_fail: 1
+alarm_if_terminated: 1

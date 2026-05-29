@@ -1,0 +1,20 @@
+/* ─────────────────────────────────────────────────────────
+   Sample JIL File — PROD Environment
+   Naming Convention: File_PA.jil (PA = PROD AutoSys)
+   Author: Indira Tiruveedhula
+   Note: Sample file — actual client JILs are confidential
+   ───────────────────────────────────────────────────────── */
+
+insert_job: SAMPLE_PROD_DATA_LOAD_JOB
+job_type: CMD
+command: ksh -x $JAVA_EXEC/sampleLoad.sh SAMPLE_PROC 3500 ENR
+machine: prod-server-01
+owner: batch_user
+permission: me,mx,ge,gx
+date_conditions: 0
+description: "Sample PROD data load job"
+std_out_file: "$ASYSLOGFILE"
+std_err_file: "$ASYSERRFILE"
+max_run_alarm: 5
+alarm_if_fail: 1
+alarm_if_terminated: 1
