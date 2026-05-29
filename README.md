@@ -40,56 +40,6 @@ Engineer writes JIL file locally
 
 ---
 
-## Complete Pipeline Architecture
-┌────────────────────────────────────────────────────────┐
-│              CI/CD PIPELINE FLOW                       │
-├────────────────────────────────────────────────────────┤
-│                                                        │
-│  DEVELOPER MACHINE                                     │
-│  ┌─────────────────────────────────┐                   │
-│  │ 1. Write JIL files              │                   │
-│  │    DEV  → File_DA.jil           │                   │
-│  │    UAT  → File_QA.jil           │                   │
-│  │    PROD → File_PA.jil           │                   │
-│  └────────────────┬────────────────┘                   │
-│                   │ git add / commit / push            │
-│                   ▼                                    │
-│  BITBUCKET (ALM)                                       │
-│  ┌─────────────────────────────────┐                   │
-│  │ 2. P2P_JIL_FILES Repository     │                   │
-│  │    Branch: bugfix/feeds         │                   │
-│  │ 3. Pull Request created         │                   │
-│  │    Reviewer approval required   │                   │
-│  │ 4. Merge to master              │                   │
-│  └────────────────┬────────────────┘                   │
-│                   │ Webhook trigger                    │
-│                   ▼                                    │
-│  JENKINS (CI/CD)                                       │
-│  ┌─────────────────────────────────┐                   │
-│  │ 5. Build ID generated           │                   │
-│  │ 6. JIL validation via JILIN     │                   │
-│  │ 7. Pass Build ID to RLM         │                   │
-│  └────────────────┬────────────────┘                   │
-│                   │                                    │
-│                   ▼                                    │
-│  RLM (Release Lifecycle Management)                    │
-│  ┌─────────────────────────────────┐                   │
-│  │ 8.  DEV deployment → Complete   │                   │
-│  │ 9.  Promote to UAT → Complete   │                   │
-│  │ 10. Promote to PROD → Complete  │                   │
-│  │     (SAAS Change ticket: PROD)  │                   │
-│  └────────────────┬────────────────┘                   │
-│                   │                                    │
-│                   ▼                                    │
-│  AUTOSYS WCC CONSOLE                                   │
-│  ┌─────────────────────────────────┐                   │
-│  │ 11. Jobs visible and active     │                   │
-│  │     across all environments     │                   │
-│  └─────────────────────────────────┘                   │
-│                                                        │
-└────────────────────────────────────────────────────────┘
-
----
 
 ## Tools & Technologies
 
